@@ -1,0 +1,43 @@
+
+/* 미디어 쿼리 
+        브라우저 환경에 따라 -> css 를 적용한다! 는 의미
+        
+        [속성 읽기] 
+            media only : 이곳에서만! ❓❓❓ (무슨말이지?) 
+            screen : 화면 일 때 ❓❓❓ 
+            and(조건) : 조건임
+                화면 1000px 까지 스타일이 적용된다.❓❓❓ 
+            { } : 여기에 css 스타일 작성  
+                  */
+@media only screen and (max-width : 1000px) {
+    
+    .box {
+        /* CSS 스타일 작성 */
+        width: 500px;
+        height: 500px;
+        border : 1px solid;
+        
+        background-color: red;
+        }
+}
+
+
+
+/* 위에것을 덮어쓴다.   
+        너비가 500px 일 때 아래의 조건이 실행  */
+@media only screen and (min-width : 500px) { 
+
+    .box {
+        width: 500px;
+        height: 500px;
+        border : 1px solid;
+
+        background-color: blue;
+    }
+
+}
+/* 1000px 까지는 '@media only screen and (max-width : 1000px)' 속성을 갖는다. 
+    500px 이상에서는 '@media only screen and (min-width : 500px)' 을 갖는다.  
+    📛📛📛 근데 더 줄이면 안 되는거 같은데  */
+
+

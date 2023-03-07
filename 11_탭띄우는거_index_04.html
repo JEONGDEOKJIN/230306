@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./12_style_06.css">
+
+    <style>
+        /* p태그 + a 태그
+                인접요소 선택자  */
+                /* 즉, 1)형제레벨에서, 2) 인접했을 때, 3) 적용 */
+        p+a{
+            color: red;
+        }
+
+        /* 1) 형제레벨에서, 2) 인접하지 않아도, ⭐밑에 있으면, 3) 적용 */
+        p~a {
+            color: red;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <p></p>
+    <div> </div>
+    <!-- p 태그의 형제로, 인접요소로 붙어있을 때 -> red 로 변하게 위에서 침.  -->
+    <a href="">나는 ~ 이 적용되어서 레드</a>
+
+
+
+    <div class="tab-menu">
+        <!--    name 이름을 동일하게 해주는 이유?❓❓❓❓❓  -->
+
+        <!-- tab01 id 를 가지고 있는 input label for 속성에 tab01 
+                이 input 이랑 이 label 이랑 연결
+                연결 한다는 건 : input 와 label 의 id 를 같게 함 
+        
+            ⭐⭐ for 속성으로 연결된 label 을 클릭하면, id 로 for 에 연결된 체크박스가 클릭이 된다.    -->
+        <input class="tab01" type="radio" id="tab01" name="tabmenu"  >
+        <label for="tab01"> 탭1 </label>
+
+        <!-- checked : 디폴트로 input 에 체크 속성을 줄 때  -->
+        <input class="tab02" type="radio" id="tab02" name="tabmenu" >
+        <label for="tab02"> 탭2 </label>
+        
+        <!-- id 는 각자 unique 해야 함 -->
+        <input class="tab03" type="radio" id="tab03" name="tabmenu" >
+        <label for="tab03"> 탭3 </label>
+         
+
+        <!-- 두개의 클래스를 갖고 있음.
+                box 클래스도 갖고 있고, item1 클래스도 갖고 있음. 
+                아, 이렇게 띄어쓰면, 클래스 이름이 2개구나 📛📛📛  -->
+        <div class="box item1"> 1번 박스  </div> 
+        <!-- box 클래스도 갖고 있고, item2 클래스도 갖고 있음.  -->
+        <div class="box item2"> 2번 박스 </div> 
+        <!-- box 클래스도 갖고 있고, item3 클래스도 갖고 있음.  -->
+        <div class="box item3"> 3번 박스 </div> 
+
+        
+        
+    </div>
+    
+            <!-- 돋보기 띄우기 -->
+            <div class="text-box">
+                <input type="text">
+            </div>
+    
+</body>
+</html>

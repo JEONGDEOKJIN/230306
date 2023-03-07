@@ -1,0 +1,58 @@
+/* 미디어 쿼리 */
+
+
+/* 0 ~ 1200px 까지는 테두리 빨강 */
+@media only screen and (max-width : 1200px ) {
+    
+    .box {
+        width: 500px;
+        height: 500px;
+        border: 10px solid red; 
+    }
+}
+
+/* 0~600px 까지, 테두리이 파랑 📛📛📛 
+        📛📛 배경을 바꾸는 건?  */
+@media only screen and (max-width : 600px ) {
+
+    .box {
+        width: 500px;
+        height: 500px;
+        border: 10px solid blue;
+        background-color: blue;
+    }
+}
+
+/* 1200px 이상은 테두리 초록 📛📛📛  */
+@media only screen and (min-width : 1200px ) {
+
+    .box {
+        width: 500px;
+        height: 500px;
+        border: 10px solid green; 
+    }
+}
+
+
+
+
+
+
+/* 돌아가게 만들기
+        📛📛 사진 말고, 그냥, div 박스가 돌아가게는 안 되려나?  */
+.box2 img {
+    width: 300px;
+    height: 300px;
+    /* background-color: beige; */
+    /* border: 5px solid blue; */
+
+    /* transform: rotate(720deg); */
+    /* transform: translate(50px); */
+
+
+    transition: transform 1s linear;
+}
+
+.box2:hover img {
+    transform: rotate(360deg);
+}

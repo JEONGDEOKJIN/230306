@@ -1,0 +1,21 @@
+/* 구글 폰트 
+        1. https://fonts.google.com/
+        2. 다운 받고
+        3. 로컬 폴더에 파일 넣어주기  */
+
+@font-face{
+    /* font - family 사용할 폰트의 이름을 정해준다. 이름짓기 */
+    font-family: 'noto';
+
+    /*  src : 사용할 폰트 파일의 경로를 적어준다.
+        format : ❓❓❓ */
+    src: url('./Noto_Sans_KR/NotoSansKR-Black.otf') format('truetype');
+
+}
+
+body {
+    /* 사용할 폰트의 이름 
+            확인하려면 : 개발자 탭 > computed > filter, font-family*/
+    font-family: 'noto';
+}
+

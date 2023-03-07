@@ -1,0 +1,109 @@
+.tab-menu > input {
+    /* 체크박스 를 다 꺼버림 */
+    display: none;
+}
+
+/* + 기호를 쓰면 -> 바로 인접한 형제 요소 선택자 임. 
+        tab-menu 클래스를 가지고 있는 태그의 자식중, input 태그 바로 아래 붙은 태그
+        바로 옆에 붙어있는 형제 선택자❓❓❓  */
+.tab-menu > input + label {
+    display: inline-block;
+    padding: 30px;
+    
+    background-color: gray;
+    color: white;
+    font-size: 14px;
+
+    /* 마우스를 올렸을 때, 커서를 설정할 수 있음. 
+        손가락 처럼 보이게 할 수 있음. */
+    cursor: pointer;
+
+}
+
+
+/* checked 된 속성이 있는 input 태그는 그 옆에 붙은 인접 형제 요소 */
+/* tab-menu 클래스를 가지고 있는 태그 자식 input 태그가, 
+    checked 속성이 있으면, 인접 형제 태그인 label 에 스타일을 적용시키겠다. ❓❓❓❓❓ 
+      */
+/*  즉, 체크 된 놈 옆에 있는 라벨에 스타일을 주겠다❓❓ 
+    '체크된 인풋의 다음번 라벨'
+        즉, input 태그가 체크 되면 -> ta02 라벨이 체크가 된다. 
+        인접 형제 스타일이 먹는다.  */
+.tab-menu > input:checked + label {
+    background : #404040;
+    color: blue;
+}
+
+
+.box {
+    width: 500px;
+    height: 600px;
+    background-color: #000;
+    margin: 0 auto;
+    display: none;
+
+
+}
+
+/* input 태그 중 1) class 가 tab01 이고 2) checked 속성이 있고 
+    3) checked 속성이 있으면 밑으로 쭉 봐
+    4) 그래서, 밑에 있는 형제 요소 중 'item1 클래스' 를 갖고 있는 '태그' 
+
+    */
+    
+
+input[class="tab01"]:checked ~.item1 {
+    display: block;
+    color: white;
+}
+
+/* tab02 클래스 가진 input 이 체크 되면 -> 밑으로 쭉 보고 -> item2 클래스가 있으면 -> {} css 해줘 */
+input[class="tab02"]:checked ~ .item2 {
+    display: block;
+    color: greenyellow;
+}
+
+/* input 중 tab03 을 가진게 클릭되면 -> check 되고  */
+input[class="tab03"]:checked ~ .item3 {
+    display: block;
+    color: aqua;
+}
+
+
+
+
+
+/* input 에 돋보기 띄우기 ⭐⭐⭐ 
+        before 가 뭐였지❓❓❓ */
+.text-box::before {
+    
+    position: absolute;
+    top: 10px;
+    left: 172px;
+
+    /* 사용안 하면 비워두기 */
+    content: " ";
+
+    /* 화살표 -> 돋보기 마우스 ->  */
+    background-image: url("https://img.megabox.co.kr/static/pc/images/common/btn/btn-search-input.png"); 
+    
+    width: 12px;
+    height: 12px;
+    /* 반복 끄고 */
+    background-repeat: no-repeat;
+    display: block;
+
+    background-size: 12px;
+
+}
+
+.text-box {
+    position: relative;
+}
+
+
+/* 글자가 돋보기 침범하지 않게 하기 */
+.text-box input {
+    padding-right : 24px;
+
+}

@@ -1,0 +1,361 @@
+
+/* input 버튼 안 보이게 하기 */
+.tab-menu > input  {
+    display: none;
+}
+
+
+.tab-menu{
+    
+    background-color: thistle;
+    width: 1100px;
+    height: 100px;
+    margin: auto;
+
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: space-between; */
+}
+
+
+.search_movie_list_area { 
+    /* background-color: lightpink; */
+    display: flex;
+    align-items: center;
+
+
+    width: 1100px;
+    height: 72px;
+
+    background-color: tan;
+    
+
+}
+
+.wrap_date_letter_result {
+    background-color: teal;
+    display: flex;
+    align-items: center;
+    
+    position: absolute;
+    /* top: 20px;/ */
+
+    width: 500px;
+    height: 50px;
+}
+
+.text-box {
+    display: flex;
+    align-items: center;
+
+    width: 500px;
+    height: 50px;
+    background-color: tomato;
+}
+
+/* 포인터 움직이면 커서 모양이 되도록 */
+.tab-menu > input + label {
+    /* display: inline-block; */
+    /* padding: 30px; */
+    
+    height: 30px;
+    width: 300px;
+
+    border: 1px solid lightgray;
+
+    /* background-color: lightblue; */
+    /* 😥😥😥 선 겹치는거는❓❓❓  */
+    color: black;
+    font-size: 15px;
+
+    cursor: pointer;
+
+    /* 글씨 가운데 정렬이 이렇게 깝깝했을 줄이야 
+            ⭐⭐⭐ https://www.codingfactory.net/10630 ⭐⭐⭐⭐⭐  */
+    text-align: center;
+    padding: 10px 0;
+}
+
+
+
+
+/* 우선 숨겨두기 */
+.item01 {
+    display: none;
+}
+
+.item02 {
+    display: none;
+}
+
+.item03 {
+    display: none;
+}
+
+.item04 {
+    display: none;
+}
+.item05 {
+    display: none;
+}
+
+
+/* 🟦 영화 리스트 공통 요건 꾸미기  */
+.movie_list {
+    display: flex;
+
+    position: absolute;
+    top: 100px;
+    left: 508px;
+
+    margin: auto;
+    /* background-color: gray; */
+    width: 1100px;
+    height: 2200px;
+}
+
+.movie_list_unordered {
+    position: relative;
+    display: flex;
+}
+
+
+/* 🟦 내부 요소 정렬 */
+.movie_list_inner{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    
+    background-color: aqua;
+    margin-right: 35px;
+    margin-top: 10px;
+    width: 230px;
+    height: 400px;
+
+    position: relative;
+}
+
+/* .movie_rate_date_area {
+    display: flex;
+} */
+
+.movie_title_area {
+    background-color: yellow;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+
+    position: absolute;
+    top: 340px;
+}
+
+.movie_rate_date_area {
+    display: flex;
+    align-items: center;
+
+    padding: auto;
+
+    text-align: center;
+    width: 100%;
+    height: 30px;
+    background-color: yellowgreen;
+    
+    position: absolute;
+    top: 370px
+}
+
+.movie_button_area {
+    background-color: green;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    position: absolute;
+    top: 402px
+}
+
+
+/* 사진 삐져나오느넥 계속 까먹어 어떻게 해야 하는지 ⭐⭐⭐⭐⭐  */
+.movie_item_poster {    
+    width: 100%;
+    height: 100%;
+    /* overflow: hidden; */
+    object-fit: cover;
+}
+
+
+
+/* 🟦 hover 작업 
+        1) 디자인용 class 랑 hover 용 class 랑 다르게 ⭐⭐⭐ 왜지?  
+        ⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐ */
+        .item_poster:hover .sub_tag{
+            display: block;
+        }
+        
+        .sub_tag {
+        
+            /* 위치값 수정 */
+            position: absolute;
+            
+            
+            color: white;
+            font-size: 12px;
+            text-align: center;
+            
+            /* ⭐⭐⭐⭐⭐⭐⭐ 처음에 안 보이다가 -> hover 되면 보이게 하는 기능
+                    ⭐⭐⭐ 핵심요소 */
+            display: none;
+        
+            background-color: rgb(0, 0, 0, 0.5);
+            width: 230px;
+            height : 330px;
+            /* top: 145px; */
+            /* left: 110px; */
+        }
+        
+        .movie_summary {
+            margin: 10px;
+            font-size: 14px;
+        }
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ✅ 튀어나오게 하기 - 박스오피스 boxoffice */
+input[class="tab01"]:checked ~ .item01 {
+    display: block;
+    /* color: wheat */
+    
+    /* display: block; */
+    /* color: black; */
+}
+
+/* 우선 숨겨두기 */
+.item01 {
+    display: none;
+}
+
+.item02 {
+    display: none;
+}
+
+.item03 {
+    display: none;
+}
+
+.item04 {
+    display: none;
+}
+.item05 {
+    display: none;
+}
+
+
+/* ✅ 튀어나오게 하기 - 상영예정작 upcoming */
+input[class="tab02"]:checked ~ .item02 {
+    display: block;
+    /* color: wheat */
+    
+    /* display: block; */
+    /* color: black; */
+
+}
+
+
+/* 우선 숨겨두기 */
+.item01 {
+    display: none;
+}
+
+.item02 {
+    display: none;
+}
+
+.item03 {
+    display: none;
+}
+
+.item04 {
+    display: none;
+}
+.item05 {
+    display: none;
+}
+
+
+/* ✅ 튀어나오게 하기 - 특별상영 */
+input[class="tab03"]:checked ~ .item03 { 
+    display: block;
+    
+}
+
+/* 우선 숨겨두기 */
+.item01 {
+    display: none;
+}
+
+.item02 {
+    display: none;
+}
+
+.item03 {
+    display: none;
+}
+
+.item04 {
+    display: none;
+}
+.item05 {
+    display: none;
+}
+
+
+/* ✅ 필름 소사이어티 튀어나오게 하기 ⭐⭐⭐⭐⭐ 핵심기술*/
+input[class="tab04"]:checked ~ .item04 { 
+    display: block;
+
+}
+
+
+/* 우선 숨겨두기 */
+.item01 {
+    display: none;
+}
+
+.item02 {
+    display: none;
+}
+
+.item03 {
+    display: none;
+}
+
+.item04 {
+    display: none;
+}
+.item05 {
+    display: none;
+}
+
+
+
+/* ✅ 클래식 소사이어티 */
+input[class="tab01"]:checked ~ .movie_list_boxoffice.item01 { 
+    display: block;
+}
+
+
+

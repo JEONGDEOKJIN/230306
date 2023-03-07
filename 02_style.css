@@ -1,0 +1,144 @@
+div {
+    border: 1px solid black;
+    width: 210px;
+    height: 210px;
+}
+
+/* div 의 자식태그 선택
+        삐져나올 경우 ⭐⭐ 
+        div 크기 만큼 img 태그가 나옴 ⭐⭐  */
+div img {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+/* 🔵 transform 속성 */
+/* box 클래스 안에 있는 img 에 대해 transform 속성 주기 */
+.box img {
+    /* transform : translate(x축, y축의 값) 
+            해당 태그의 위치를 이동시켜준다.
+            transform 은 함수 처럼 생김 
+            ❓ position 속성이랑 뭐가 다른거지? ❓❓❓❓❓ 기능은 동일? */
+    transform: translate(50px, 100px);
+}
+
+.box2 img {
+    /* y축 없고, x 축만 이동  */
+    transform: translateX(100px);
+}
+
+.box2 img {
+    /* ⭐같은 선택자⭐ 일 때, CSS 는 '밑에 있는 속성' 이 덮어쓰기 된다. ⭐⭐⭐ */
+    /* y 축으로만 이동! */
+    transform: translateY(100px);
+}
+
+.box3 img {
+    /* scale 은 1이 기본 크기
+            크기를 조절할 수 있음. 
+            ex) 0.5 = 50% 사이즈로 변함
+            
+        두 번째 인자 = y 축 비율임 */
+    
+    /* x,y 기본 조절 */
+    transform: scale(0.1);
+    /* y 축을 0.1 로 */
+    transform: scale(0.1, 1);
+    /* 2배 크기 */
+    transform: scale(2);
+}
+
+.box4 img {
+    /* rotate 속성 
+            deg : 회전 각도
+            ex) 45 deg = 45도 회전  */
+    /* 45도 회전 */
+    transform: rotate(45deg);
+    /* 90도 회전 */
+    transform: rotate(90deg);
+}
+
+
+
+/* 🔵 CSS에서 animation 작성할 때 사용 📛📛📛
+        ani : keyframe 뒤에 작성된 ani가 '애니메이션 이름' 임.   */
+@keyframes ani {
+    /* 전체 동작 중 진행도 0% ~ 50% 까지의 동작  */
+    0% {
+        transform: rotate(0);
+
+    }
+    /* 전체 동작 중 진행도 50%일 때의 동작  */
+    50% {
+        transform: rotate(360deg);
+
+    }
+    /* 전체 동작 중 50% ~ 100% 까지 일 때의 동작 */
+    100% {
+        transform: rotate(0);
+    }
+}
+
+
+/* 🔵 transition 속성 (호버 되면 -> 막 돌아가는거)  */
+/* ❓❓ transition 
+            스타일이 변화하면서 -> 효과를 줄 수 있음. 
+            transition 에 대해서 변화하는 1) 시간 2) 변화 방법을 설정할 수 있음. */
+.box5 img { 
+        /* 읽어보면 
+                1) transform 속성이 3초 동안 변화하고 (태그가 돌아가는 것) 
+                2) border 가 1초 동안 변화 (테두리가 생기는 것) 
+                3) border radius 역시 1초 동안 변화 (둥글게 모서리가 깎이는 것) 
+                
+            포인트 
+                1) 밑에서 hover img 태그에 대해서 css 정의한 부분이 
+                2) 어떤 속도로, 어떤 곡선의 모양으로, 움직일 것 인가! 를 여기에서 정의*/
+    transition: transform 5s linear, border 5s ease-in-out, border-radius 5s ease-in-out;
+
+}
+
+/* 위에 작성한 'ani' 를 먹여주기 */
+.box5 img{ 
+    /* animation 속성은 1) keyframe animation 이름 2) 시간 3) 변화방법 */
+    /* animation: ani 1s ease; */
+    /* animation: ani 2s ease; */
+}
+
+/* 호버했을 때(box5 img 에 올라갔을때) ->  */
+.box5:hover img {
+    /* 마우스를 태그에 올라갔을 때~!  */
+    transform: rotate(720deg);
+    border: 10px solid red;
+    border-radius: 30%;
+}
+
+
+/* 🔵 position relative, absolute 이용해서 -> 사진을 가운데로 오게 하기  */
+.box6 {
+    position: relative;
+
+}
+.box6 img {
+    /* 태그 사이즈 설정 */
+    width: 150px;
+    height: 150px;
+
+    /* 가운데로 오게 하려면
+            1) flex 로 정렬 
+            2) position relative - absolute
+                부모에게 relative 가 있어야 함 */
+    position: absolute;
+
+    /* 상 50%, 좌 50% 만큼 태그를 이동 */
+    top : 50%; 
+    left: 50%;
+
+    /* 태그의 반지름 만큼, 좌로 50% 이동, 위로 50% 이동 
+            반지름 만큼 빼서 -> 중앙으로 밀어주기 ⭐⭐
+            이거 안 하면 오른쪽 귀퉁이에 있게 됨. */
+    transform: translate(-50%, -50%);        
+
+    
+}

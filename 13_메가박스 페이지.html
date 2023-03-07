@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메가박스</title>
+
+    <link rel="stylesheet" href="./14_style_07.css">
+
+
+
+</head>
+
+<body>
+
+    <!-- 탭 띄우기 기능 구현 
+        name="tabmenu"이게 있으면 -> 하나씩 클릭되나?
+            이거는, 데이터를 볼 때, 작동하는거 아니였나?  
+            클릭이 하나만 되게 하네 ⭐⭐⭐⭐⭐ 신기함 왜지? 
+
+        label 태그의 for 속성은, input tag 의 id 와 동일하게 값을 줘야하지 ?
+-->
+
+    <!-- 메뉴탭 -->
+    <div class="tab_menus">
+
+        <!-- 첫 번째 메뉴탭 -->
+        <input class="tab01" type="radio" id="tab01" name="tabmenu" checked>
+        <label class="tab01" for="tab01">
+            <p> 탭1 </p>
+        </label>
+
+        <!-- 두 번째 메뉴탭 -->
+        <input class="tab02" type="radio" id="tab02" name="tabmenu" >
+        <label for="tab02">
+            <p> 탭2 </p>
+        </label>
+
+        <!-- 세 번째 메뉴탭 -->
+        <input class="tab03_input" type="radio" id="tab03" name="tabmenu">
+        <label for="tab03">
+            <p> 탭3 </p>
+        </label>
+
+    </div>
+
+
+    <!-- 메뉴탭 클릭하면 -> 나올 놈들 -->
+
+    <!-- ❓ 여기에서 class 이름을 2개로? 왜? 
+            1) movie_container 는 영화 를 담고 있는 공간 전체를 의미
+                    이 클래스는 박스 디자인을 담당 
+            2) 탭 이 클릭 되었을 때 -> 000 을 열어~ 가 될텐데, 이때, 000 을 의미
+            
+            ❓ 그런데, 굳이 클래스를 2개로 나눌 필요가 있나? ⭐⭐⭐⭐⭐ 
+                1) 디자인을 공통적으로 해줄 필요가 있어! 그러면 box!라는 하나의 클래스를 쓰는거야  
+        -->
+    <div class="movie_container item1"> 1번 영화 박스     </div>
+
+    <div class="movie_container item2"> 2번 영화 박스     </div>
+
+    <div class="movie_container item3"> 3번 영화 박스     </div>
+
+
+
+
+</body>
+
+</html>
